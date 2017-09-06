@@ -2,7 +2,7 @@
 <html ng-app="notesApp">
   <head>
     <link rel="stylesheet" href="main.css">
-    <title>project8</title>
+    <title>project9</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
@@ -29,7 +29,7 @@
                 <div ng-controller="SubCtrl as ctrl">
                   <h3>First tab</h3>
                   <ul>
-                    <li ng-repeat="item in ctrl.list">
+                    <li ng-repeat="item in ctrl.list()">
                       <span ng-bind="item.label"></span>
                     </li>
                   </ul>
@@ -42,7 +42,7 @@
                 <div ng-controller="SubCtrl as ctrl">
                   <h3>Second tab</h3>
                   <ul>
-                    <li ng-repeat="item in ctrl.list">
+                    <li ng-repeat="item in ctrl.list()">
                       <span ng-bind="item.label"></span>
                     </li>
                   </ul>
