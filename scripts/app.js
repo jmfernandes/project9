@@ -1,4 +1,4 @@
-angular.module("notesApp",[])
+angular.module('notesApp',[])
   .controller('MainCtrl', [function(){
     var self = this;
     self.tab = 'first';
