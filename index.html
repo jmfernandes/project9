@@ -1,80 +1,49 @@
-<!doctype html>
-<html>
-  <head>
-    <link rel="stylesheet" href="main.css">
-    <title>project8</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicons/manifest.json">
-    <link rel="mask-icon" href="assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
-    <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-  </head>
-  <body>
-    <div id="header"></div>
-    <main class="page-content" aria-label="Content" ng-app="notesApp">
-      <div class="wrapper">
-        <article class="post-content">
+<!-- File: chapter5/simple-angularjs-service/index.html -->
+<html ng-app="notesApp">
+<body ng-controller="MainCtrl as mainCtrl">
+  <h1>Hello Controllers!</h1>
+  <button ng-click="mainCtrl.open('first')">
+    Open First
+  </button>
+  <button ng-click="mainCtrl.open('second')">
+    Open Second
+  </button>
+  <div ng-switch on="mainCtrl.tab">
+    <div ng-switch-when="first">
+      <div ng-controller="SubCtrl as ctrl">
+        <h3>First tab</h3>
+        <ul>
+          <li ng-repeat="item in ctrl.list()">
+            <span ng-bind="item.label"></span>
+          </li>
+        </ul>
 
-          <body ng-controller="MainCtrl as mainCtrl">
-            <h1>Hello Controllers!</h1>
-            <button ng-click="mainCtrl.open('first')">Open First</button>
-            <button ng-click="mainCtrl.open('second')">Open Second</button>
-            <div ng-switch on="mainCtrl.tab">
-
-              <div ng-switch-when="first">
-                <div ng-controller="SubCtrl as ctrl">
-                  <h3>First tab</h3>
-                  <ul>
-                    <li ng-repeat="item in ctrl.list">
-                      <span ng-bind="item.label"></span>
-                    </li>
-                  </ul>
-
-                  <button ng-click="ctrl.add()">Add More Items</button>
-                </div>
-
-              </div>
-              <div ng-switch-when="second">
-                <div ng-controller="SubCtrl as ctrl">
-                  <h3>Second tab</h3>
-                  <ul>
-                    <li ng-repeat="item in ctrl.list">
-                      <span ng-bind="item.label"></span>
-                    </li>
-                  </ul>
-
-                  <button ng-click="ctrl.add()">Add More Items</button>
-                </div>
-              </div>
-            </div>
-          </body>
-
-
-        </article>
+        <button ng-click="ctrl.add()">
+          Add More Items
+        </button>
       </div>
-    </main>
-    <div id="footer"></div>
 
-  <!-- Necessary Library Scripts -->
-    <script src="assets/library/jquery-3.2.1.min.js"></script>
-    <script src="assets/library/angular.min.js"></script>
-	  <script src="assets/library/angular-route.min.js"></script>
-    <script src="assets/library/angular-messages.min.js"></script>
-    <script src="assets/library/lodash.js"></script>
-  <!-- App file -->
-    <script src="scripts/app.js"></script>
-  <!-- Controllers -->
+    </div>
+    <div ng-switch-when="second">
+      <div ng-controller="SubCtrl as ctrl">
+        <h3>Second tab</h3>
+        <ul>
+          <li ng-repeat="item in ctrl.list()">
+            <span ng-bind="item.label"></span>
+          </li>
+        </ul>
 
-  <!-- jQuery code -->
-    <script>
-    $(function(){
-      $("#header").load("views/header.html");
-      $("#footer").load("views/footer.html");
-    });
-    </script>
-  </body>
+        <button ng-click="ctrl.add()">
+          Add More Items
+        </button>
+      </div>
+    </div>
+  </div>
+
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js">
+</script>
+<script src="app.js"></script>
+</body>
+
 </html>
