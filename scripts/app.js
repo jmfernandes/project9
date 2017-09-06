@@ -6,8 +6,7 @@ angular.module('notesApp', [])
       self.tab = tab;
     };
   }])
-  .controller('SubCtrl', ['ItemService',
-      function(ItemService) {
+  .controller('SubCtrl', ['ItemService', function(ItemService) {
     var self = this;
     self.list = function() {
       return ItemService.list();
