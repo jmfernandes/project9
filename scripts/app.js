@@ -1,4 +1,3 @@
-// File: chapter5/need-for-service/app.js
 angular.module('notesApp', [])
   .controller('MainCtrl', [function() {
     var self = this;
@@ -7,9 +6,10 @@ angular.module('notesApp', [])
       self.tab = tab;
     };
   }])
-  .controller('SubCtrl', ['ItemService', function(ItemService) {
+  .controller('SubCtrl', ['ItemService',
+      function(ItemService) {
     var self = this;
-    self.list = function(){
+    self.list = function() {
       return ItemService.list();
     };
 
@@ -20,16 +20,16 @@ angular.module('notesApp', [])
       });
     };
   }])
-  .factory('ItemService',[function(){
+  .factory('ItemService', [function() {
     var items = [
       {id: 1, label: 'Item 0'},
       {id: 2, label: 'Item 1'}
     ];
     return {
-      list: function(){
+      list: function() {
         return items;
       },
-      add: function(item){
+      add: function(item) {
         items.push(item);
       }
     };
