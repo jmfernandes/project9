@@ -1,12 +1,14 @@
-angular.module('notesApp',[])
-  .controller('MainCtrl', [function(){
+app = angular.module('notesApp',[]);
+
+app.controller('MainCtrl', [function(){
     var self = this;
     self.tab = 'first';
     self.open = function(tab){
       self.tab = tab;
     };
-  }])
-  .controller('SubCtrl',[function(){
+  }]);
+
+app.controller('SubCtrl',[function(){
     var self = this;
     self.list = [
       {id:1,label:'Item 0'},
