@@ -15,8 +15,8 @@ angular.module("notesApp",[])
 
     self.add = function(){
       self.list.push({
-        id: self.list.length +1,
+        id: self.list.length + 1,
         label: 'Item' + self.list.length
       });
     };
-  }])
+  }]);
