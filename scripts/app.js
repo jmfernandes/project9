@@ -1,24 +1,23 @@
-app = angular.module('notesApp',[]);
-
-app.controller('MainCtrl', [function(){
+// File: chapter5/need-for-service/app.js
+angular.module('notesApp', [])
+  .controller('MainCtrl', [function() {
     var self = this;
     self.tab = 'first';
-    self.open = function(tab){
+    self.open = function(tab) {
       self.tab = tab;
     };
-  }]);
-
-app.controller('SubCtrl',[function(){
+  }])
+  .controller('SubCtrl', [function() {
     var self = this;
     self.list = [
-      {id:1,label:'Item 0'},
-      {id:2,label:'Item 1'}
+      {id: 1, label: 'Item 0'},
+      {id: 2, label: 'Item 1'}
     ];
 
-    self.add = function(){
+    self.add = function() {
       self.list.push({
         id: self.list.length + 1,
-        label: 'Item' + self.list.length
+        label: 'Item ' + self.list.length
       });
     };
   }]);
