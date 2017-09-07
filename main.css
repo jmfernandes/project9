@@ -170,13 +170,13 @@ pre {
   .site-title, .site-title:visited {
     color: #424242; }
 
-    @media (max-width: 480px)
-        {
-           .site-title
-           {
-               font-size: 18px;
-           }
-        }
+@media (max-width: 480px)
+    {
+       .site-title
+       {
+           font-size: 18px;
+       }
+    }
 
 .site-nav {
   float: right;
